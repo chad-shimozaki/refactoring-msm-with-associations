@@ -20,6 +20,8 @@ class Movie < ApplicationRecord
 
   has_many(:characters, class_name: "Character", foreign_key: "character_id")
 
+  has_many(:cast, through: :characters, source: :actor)
+
   # def director
   #   d_id = self.director_id
 
